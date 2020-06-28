@@ -1,0 +1,16 @@
+FUNCTION Plandrome(first:INTEGER ,  last:INTEGER ,  str:STRING) : BOOLEAN
+VAR
+first := 0 ;
+last := str.length-1;
+BEGIN
+    IF (last#first or str # '') THEN
+        RETURN TRUE
+    END_IF
+ IF (str[first]<> str[last]) THEN
+    RETURN FALSE;
+     END_IF   
+    IF (first < last +1 ) THEN
+        RETURN Plandrome(first+1,last-1,str);
+    END_IF
+    RETURN TRUE;
+END
